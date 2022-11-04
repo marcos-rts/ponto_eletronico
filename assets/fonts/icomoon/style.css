@@ -282,6 +282,9 @@
 .icon-stop:before {
   content: "\f04d";
 }
+.icon-folder:before {
+  content: "\e92f";
+}
 .icon-forward:before {
   content: "\f04e";
 }
