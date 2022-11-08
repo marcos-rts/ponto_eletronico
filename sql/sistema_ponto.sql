@@ -30,8 +30,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `pontos` (
   `id` int(20) NOT NULL,
   `data_entrada` date NOT NULL,
-  `entrada` time NOT NULL,
-  `saida` time NOT NULL,
+  `entrada` time NULL,
+  `saida` time NULL,
   `usuario_id` int(20) NOT NULL,
   `projeto_id` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

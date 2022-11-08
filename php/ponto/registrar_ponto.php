@@ -50,16 +50,10 @@ if (($result_ponto) and ($result_ponto->rowCount() != 0)) {
 
     if (($saida == "") or ($saida == null)) { // Verificar se o usuario bateu o ponto de saida
         // Coluna que deve receber o valor
+        $col_tipo_registro = "saida";
 
-        $query_horario = "UPDATE pontos SET saida =:horario_atual
-        WHERE id=:id
-        LIMIT 1";
         // Tipo de registro
-        $cad_horario = $conn->prepare($query_horario);
-
-        // Substituir o link da QUERY pelo valor
-        $cad_horario->bindParam(':horario_atual', $horario_atual);
-        $cad_horario->bindParam(':id', $id_ponto);
+        $tipo_registro = "editar";
 
         // Texto parcial que deve ser apresentado para o usuario
         $text_tipo_registro = "saída";
@@ -83,9 +77,17 @@ switch ($tipo_registro) {
         // Acessa o case quando deve editar o registro
     case "editar":
         // Query para editar no banco de dados
-        
+        $query_horario = "UPDATE pontos SET $col_tipo_registro =:horario_atual
+        WHERE id=:id
+        LIMIT 1";
 
         // Preparar a QUERY
+        $cad_horario = $conn->prepare($query_horario);
+
+        // Substituir o link da QUERY pelo valor
+        $cad_horario->bindParam(':horario_atual', $horario_atual);
+        $cad_horario->bindParam(':id', $id_ponto);
+
         
         break;
     default:
