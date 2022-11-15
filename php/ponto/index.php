@@ -36,6 +36,32 @@ if (null == $_SESSION['id_project'])
     Banco::desconectar();
 }
 
+switch (date('m')){
+    case 1:
+        $MesExtend = "Janeiro";
+    case 2:
+        $MesExtend = "Fevereiro";
+    case 3:
+        $MesExtend = "Março";
+    case 4:
+        $MesExtend = "Abril";
+    case 5:
+        $MesExtend = "Maio";
+    case 6:
+        $MesExtend = "Junho";
+    case 7:
+        $MesExtend = "Julho";
+    case 8:
+        $MesExtend = "Agosto";
+    case 9:
+        $MesExtend = "Setembro";
+    case 10:
+        $MesExtend = "Outubro";
+    case 11:
+        $MesExtend = "Novembro";
+    case 12:
+        $MesExtend = "Dezembro";    
+};
 ?>
 
 <!DOCTYPE html>
@@ -54,6 +80,9 @@ if (null == $_SESSION['id_project'])
     <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
     <!-- Style -->
     <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <link rel="stylesheet" href="../../assets/css/projeto.css">
+
     <title>Ponto - <?php echo $data['nome'] ?></title>
 </head>
 
@@ -115,18 +144,77 @@ if (null == $_SESSION['id_project'])
 
     </aside>
 
-    <h2>Registrar ponto - <?php echo $_SESSION['id_project'] ?></h2>
+    <main style="background: #2c2c2c;">
+        <div class="site-section">
+            <div class="container">
+                <h1 id="titulo">Registrar ponto</h1>
+                <h2 id="titulo2">Projeto: <?php echo $data['nome'] ?></h2>
+                <div class="row">
 
-    <?php
-    if(isset($_SESSION['msg'])){
-        echo $_SESSION['msg'];
-        unset($_SESSION['msg']);
-    }
+
+
+                    <?php
+    // if(isset($_SESSION['msg'])){
+    //     echo $_SESSION['msg'];
+    //     unset($_SESSION['msg']);
+    // }
     ?>
+                    <hr>
+                    <div class="col-6">
+                        <!-- <p id="horario"><?php echo date("d/m/Y H:i:s"); ?></p> -->
+                        <!-- <a href="registrar_ponto.php">Registrar</a> -->
+                        <br>
+                        <p>
+                            <a href="<?php $data['link_repo'] ?>">
+                                <img id="logo" src="../../assets/images/svg/logo-github.svg"></img>
+                            </a>
+                        </p>
+                        <p>
+                            Se for a primieira vez neste projeto ira precisar clonar o projeto e cadastrar o caminho do
+                            codigo:
+                            <br>
+                            Clonando e adicionando caminho:
+                            <br>
+                            <br>
+                            <code>
+                                git branch -M main
+                                <br>
+                                git clone www.teste.com
+                                <br>
+                                git remote add origin https://github.com/alexandre824/Site-vendas
+                            </code>
+                            <br>
+                            <br>
+                            Se ja esta trabalhando neste projeto, puxe as atualizações
+                        </p>
+                    </div>
+                    <div id="box" class="col-6 justify-content-center">
+                        <div id="dia">
+                            <p><?php echo date("d"); ?></p>
+                        </div>
+                        <div id="mes">
+                            <p><?php echo $MesExtend; ?></p>
+                        </div>
+                        <div id="ano">
+                            <p><?php echo date("Y"); ?></p>
+                        </div>
+                        <div id="hora">
+                            <br>
+                            <p id="horario"><?php echo date("d/m/Y H:i:s"); ?></p>
+                            <a class="btn btn-light" href="registrar_ponto.php">Registrar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
-    <p id="horario"><?php echo date("d/m/Y H:i:s"); ?></p>
-    <a href="registrar_ponto.php">Registrar</a>
-    <br>
+    <main style="background: #2c2c2c;">
+        <div class="site-section">
+            <div class="container">
+            </div>
+        </div>
+    </main>
 
     <script>
     var apHorario = document.getElementById("horario");
