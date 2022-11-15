@@ -55,11 +55,11 @@ if (!isset($_SESSION['UsuarioID'])) {
             <div class="profile">
                 <img src="../assets/images/vazio.png" alt="Image" class="img-fluid">
                 <h3 class="name"> <?php echo $_SESSION['UsuarioNome'] ?> </h3>
-                <span class="country">Web Designer</span>
+                <!-- <span class="country">Web Designer</span> -->
             </div>
             <div class="nav-menu">
                 <ul>
-                    <li class="accordion">
+                    <!-- <li class="accordion">
                         <a href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false"
                             aria-controls="collapseOne" class="collapsible">
                             <span class="icon-home mr-3"></span>Feed
@@ -73,8 +73,9 @@ if (!isset($_SESSION['UsuarioID'])) {
                                 </ul>
                             </div>
                         </div>
-                    </li>
-                    <li class="accordion">
+                    </li> -->
+
+                    <!-- <li class="accordion">
                         <a href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
                             aria-controls="collapseTwo" class="collapsible">
                             <span class="icon-search2 mr-3"></span>Explore
@@ -89,11 +90,16 @@ if (!isset($_SESSION['UsuarioID'])) {
                                 </ul>
                             </div>
                         </div>
+                    </li> -->
 
-                    </li>
-                    <li><a href="#"><span class="icon-notifications mr-3"></span>Notifications</a></li>
-                    <li><a href="projetos.php"><span class="icon-folder mr-3"></span>Projetos</a></li>
-                    <li><a href="#"><span class="icon-pie-chart mr-3"></span>Stats</a></li>
+                    <li><a href="index.php"><span class="icon-home mr-3"></span>Inicio</a></li>
+
+                    <li><a href="page/profile.php"><span class="icon-user mr-3"></span>Perfil</a></li>
+                    
+                    <li><a href="page/projetos.php"><span class="icon-folder mr-3"></span>Projetos</a></li>
+                    
+                    <!-- <li><a href="#"><span class="icon-pie-chart mr-3"></span>Stats</a></li> -->
+                    
                     <li><a href="logout.php"><span class="icon-sign-out mr-3"></span>Sign out</a></li>
                 </ul>
             </div>
@@ -106,7 +112,7 @@ if (!isset($_SESSION['UsuarioID'])) {
         <div class="site-section">
             <div class="container">
                 <div class="row justify-content-center">
-                <?php
+                    <?php
     if(isset($_SESSION['msg'])){
         echo $_SESSION['msg'];
         unset($_SESSION['msg']);
