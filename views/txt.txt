@@ -1,0 +1,3 @@
+Arquivos HTML/PHP que compõem a interface do usuário.
+
+(arquivos HTML/PHP para lógica da visualização)
