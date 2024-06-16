@@ -1,2 +1,0 @@
-Contém arquivos públicos, como a página inicial index.html e outros arquivos acessíveis diretamente pelo navegador.
-(outros arquivos públicos)
